@@ -224,7 +224,7 @@ Transform:
   m_GameObject: {fileID: 1063672585}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.218, y: -1.6226, z: 0.076687485}
-  m_LocalScale: {x: 11.069349, y: 0.6147399, z: 1}
+  m_LocalScale: {x: 77.20871, y: 0.6147399, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -237,6 +237,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173052449, guid: 8074680b1e834d44f84f3be36b068c36, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173052449, guid: 8074680b1e834d44f84f3be36b068c36, type: 3}
+      propertyPath: m_GravityScale
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 390521530913219946, guid: 8074680b1e834d44f84f3be36b068c36, type: 3}
+      propertyPath: m_Grounded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 390521530913219946, guid: 8074680b1e834d44f84f3be36b068c36, type: 3}
+      propertyPath: m_JumpForce
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 390521530913219946, guid: 8074680b1e834d44f84f3be36b068c36, type: 3}
+      propertyPath: m_WhatIsGround.m_Bits
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2685706481933493175, guid: 8074680b1e834d44f84f3be36b068c36, type: 3}
       propertyPath: m_RootOrder
       value: 0
