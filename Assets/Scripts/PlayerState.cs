@@ -15,7 +15,9 @@ public class PlayerState : MonoBehaviour
 
     public EventHandler OnDie;
     public EventHandler PreDie;
-    
+
+    public bool OutSideSafeZone = true;
+
     private void Player_OnDie(object sender, EventArgs e)
     {
         Teleport();
@@ -25,6 +27,13 @@ public class PlayerState : MonoBehaviour
     {
         instance = this;
         OnDie += Player_OnDie;
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F) && OutSideSafeZone)
+        {
+            InvokeOnDieEvent();
+        }
     }
     public void Teleport()
     {

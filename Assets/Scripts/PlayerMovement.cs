@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private CharacterController2D controller;
     private Rigidbody2D rb;
+    public Transform cameraPosition;
+    private float cameraYmin;
     public float speed = 40f;
 
     float horizontalMove;
@@ -13,7 +15,11 @@ public class PlayerMovement : MonoBehaviour
 
     bool jump = false;
 
-    // Start is called before the first frame update
+
+    private void Awake()
+    {
+        cameraYmin = cameraPosition.position.y;
+    }
     void Start()
     {
         controller = GetComponent<CharacterController2D>();
@@ -24,15 +30,19 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
+        float cameraYNew;
+        if(cameraYmin < transform.position.y ) cameraYNew = transform.position.y;
+        else cameraYNew = cameraYmin;
+
+        cameraPosition.position = new Vector3(
+            transform.position.x,
+            cameraYNew,
+            cameraPosition.position.z
+            );
 
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
-        }
-
-        if(Input.GetKeyDown(KeyCode.F))
-        {
-            PlayerState.GetInstance().InvokeOnDieEvent();
         }
     }
     private void FixedUpdate()
