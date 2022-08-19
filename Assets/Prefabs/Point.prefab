@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5477748806258128134}
   - component: {fileID: 2985432674579282906}
   - component: {fileID: 6860805244871366944}
+  - component: {fileID: 6332142182181004307}
   m_Layer: 0
   m_Name: Point
   m_TagString: Untagged
@@ -101,3 +102,15 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &6332142182181004307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3682251059608826767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a673529bf5aef004c9a5927eaacd15be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

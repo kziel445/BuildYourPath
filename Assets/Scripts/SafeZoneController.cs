@@ -6,10 +6,11 @@ public class SafeZoneController : MonoBehaviour
 {
     private void OnTriggerStay2D(Collider2D collision)
     {
-        PlayerState.GetInstance().OutSideSafeZone = false;
+        if(collision.gameObject.tag == "Player") PlayerState.GetInstance().OutSideSafeZone = false;
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        PlayerState.GetInstance().OutSideSafeZone = true;
+        if (collision.gameObject.tag == "Player") PlayerState.GetInstance().OutSideSafeZone = true;
     }
 }
