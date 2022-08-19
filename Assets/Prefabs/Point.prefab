@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2985432674579282906}
   - component: {fileID: 6860805244871366944}
   - component: {fileID: 6332142182181004307}
+  - component: {fileID: 1238598257605402074}
   m_Layer: 0
   m_Name: Point
   m_TagString: Untagged
@@ -114,3 +115,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a673529bf5aef004c9a5927eaacd15be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1238598257605402074
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3682251059608826767}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
