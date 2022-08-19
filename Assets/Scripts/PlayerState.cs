@@ -14,10 +14,10 @@ public class PlayerState : MonoBehaviour
     public Vector3 checkPoint;
 
     public EventHandler OnDie;
-
+    public EventHandler PreDie;
+    
     private void Player_OnDie(object sender, EventArgs e)
     {
-        Debug.Log("Die");
         Teleport();
     }
     
@@ -32,6 +32,7 @@ public class PlayerState : MonoBehaviour
     }    
     public void InvokeOnDieEvent()
     {
+        PreDie?.Invoke(this, EventArgs.Empty);
         OnDie?.Invoke(this, EventArgs.Empty);
     }
         

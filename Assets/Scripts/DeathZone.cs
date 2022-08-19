@@ -6,6 +6,8 @@ public class DeathZone : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerState.GetInstance().InvokeOnDieEvent();
+        if (collision.gameObject.tag == "Player") PlayerState.GetInstance().InvokeOnDieEvent();
+        else Destroy(collision.gameObject);
+
     }
 }

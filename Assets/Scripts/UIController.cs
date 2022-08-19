@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
     public GameObject GameOverObject;
     Vector3 startPosition = new Vector3(200,100);
     Vector3 endPosition = new Vector3(200,-100);
+
     private void Awake()
     {
         PlayerState.GetInstance().OnDie += SpawnGameOver;
