@@ -29,6 +29,11 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
         }
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            PlayerState.GetInstance().InvokeOnDieEvent();
+        }
     }
     private void FixedUpdate()
     {

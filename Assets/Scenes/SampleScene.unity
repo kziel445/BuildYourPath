@@ -798,6 +798,7 @@ GameObject:
   m_Component:
   - component: {fileID: 939881099}
   - component: {fileID: 939881098}
+  - component: {fileID: 939881100}
   m_Layer: 0
   m_Name: DeathZoneUnderMap
   m_TagString: Untagged
@@ -815,7 +816,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -4.392456, y: -1.5115161}
@@ -846,6 +847,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &939881100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939881097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc3560628095804cbecd2717df52ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1156492590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,7 +1020,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862144854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.78, y: -0.13, z: 0.17593399}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1095,3 +1108,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8074680b1e834d44f84f3be36b068c36, type: 3}
+--- !u!1 &498580519069433738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5756173574906965032, guid: 8074680b1e834d44f84f3be36b068c36, type: 3}
+  m_PrefabInstance: {fileID: 498580519069433737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &498580519069433739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498580519069433738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f8bc746e98778d4ca877153efd3797c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkPoint: {x: 0, y: 2, z: 0}
