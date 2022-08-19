@@ -11,17 +11,22 @@ public class PointsController : MonoBehaviour
         return instance;
     }
     public EventHandler GetPoint;
+    public TMPro.TextMeshProUGUI text;
 
     public int points = 0;
     private void Awake()
     {
         instance = this;
-
+        text = GetComponentInChildren<TMPro.TextMeshProUGUI>();
         GetPoint += Player_GetPoint;
     }
     private void Player_GetPoint(object sender, EventArgs e)
     {
         points++;
+        UpdatePoints();
     }
-    private void
+    private void UpdatePoints()
+    {
+        text.text = points.ToString("D4");
+    }
 }
