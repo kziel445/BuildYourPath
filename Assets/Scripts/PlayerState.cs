@@ -13,6 +13,7 @@ public class PlayerState : MonoBehaviour
 
     public Vector3 checkPoint;
 
+    public EventHandler OnRespawn;
     public EventHandler OnDie;
     public EventHandler PreDie;
 
@@ -20,13 +21,19 @@ public class PlayerState : MonoBehaviour
 
     private void Player_OnDie(object sender, EventArgs e)
     {
-        Teleport();
+        StartCoroutine(CastTeleportation(1));
+        ChangeVisibility(false);
+    }
+    public void Player_OnRespawn(object sender, EventArgs e)
+    {
+        ChangeVisibility(true);
     }
     
     private void Awake()
     {
         instance = this;
         OnDie += Player_OnDie;
+        OnRespawn += Player_OnRespawn;
     }
     private void Update()
     {
@@ -35,14 +42,28 @@ public class PlayerState : MonoBehaviour
             InvokeOnDieEvent();
         }
     }
+    IEnumerator CastTeleportation(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        Respawn();
+    }
+    public void ChangeVisibility(bool visible)
+    {
+        gameObject.GetComponentInChildren<SpriteRenderer>().enabled = visible;
+        gameObject.GetComponent<Collider2D>().enabled = visible;
+    }
     public void Teleport()
     {
         gameObject.transform.position = checkPoint;
     }    
+    public void Respawn()
+    {
+        Teleport();
+        OnRespawn?.Invoke(this, EventArgs.Empty);
+    }
     public void InvokeOnDieEvent()
     {
         PreDie?.Invoke(this, EventArgs.Empty);
         OnDie?.Invoke(this, EventArgs.Empty);
     }
-        
 }

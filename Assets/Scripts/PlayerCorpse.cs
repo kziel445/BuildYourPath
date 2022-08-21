@@ -13,10 +13,6 @@ public class PlayerCorpse : MonoBehaviour
         PlayerState.GetInstance().PreDie += Body_OnDie;
     }
 
-    void Update()
-    {
-        
-    }
     public void Body_OnDie(object sender, EventArgs e)
     {
         Instantiate(pfBody, GetComponent<Transform>().position, Quaternion.identity, bodyParent);
