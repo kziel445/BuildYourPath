@@ -13,6 +13,8 @@ public class PlayerState : MonoBehaviour
 
     public Vector3 checkPoint;
 
+    AudioSource audio;
+
     public EventHandler OnRespawn;
     public EventHandler OnDie;
     public EventHandler PreDie;
@@ -28,12 +30,12 @@ public class PlayerState : MonoBehaviour
     {
         ChangeVisibility(true);
     }
-    
     private void Awake()
     {
         instance = this;
         OnDie += Player_OnDie;
         OnRespawn += Player_OnRespawn;
+        audio = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -51,6 +53,10 @@ public class PlayerState : MonoBehaviour
     {
         gameObject.GetComponentInChildren<SpriteRenderer>().enabled = visible;
         gameObject.GetComponent<Collider2D>().enabled = visible;
+        
+        gameObject.GetComponent<Rigidbody2D>().bodyType = 
+            visible ? RigidbodyType2D.Dynamic : RigidbodyType2D.Static;
+
     }
     public void Teleport()
     {
@@ -63,6 +69,7 @@ public class PlayerState : MonoBehaviour
     }
     public void InvokeOnDieEvent()
     {
+        audio.Play();
         PreDie?.Invoke(this, EventArgs.Empty);
         OnDie?.Invoke(this, EventArgs.Empty);
     }

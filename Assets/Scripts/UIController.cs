@@ -20,4 +20,8 @@ public class UIController : MonoBehaviour
         var go = Instantiate(GameOverObject, startPosition, Quaternion.identity, transform);
         go.GetComponent<GameOver>().endPosition = endPosition;
     }
+    public void ReloadLevel()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+    }
 }
